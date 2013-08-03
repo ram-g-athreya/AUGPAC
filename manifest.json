@@ -1,0 +1,21 @@
+{
+   "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "app.css" ],
+      "js": [ "tracking.js", "mark.js", "subject.js", "jquery.js", "main.js" ],
+      "matches": [ "*://result12.annauniv.edu/*", "*://result13.annauniv.edu/*", "*://result14.annauniv.edu/*", "*://result.annauniv.edu/*" ]
+   } ],
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "description": "GPA Calculated Automatically in Anna University Result Page",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCabG1IsFa2mtc1OTMuqgyER4kn0pb+lPcEjnh58jAndLF32FaLSXloVxo+wxHRgCWLPv0krlCgNBBZUmg8SgV924wnMkClLXNlsk+E2+zA3OChUCT8p3FfIyNwAzdrRHBjjVGOS6/TiXI9jUuv96xNqYVPK+kF898TE3TVJqGXdQIDAQAB",
+   "manifest_version": 2,
+   "name": "Anna University GPA Calculator",
+   "permissions": [ "tabs", "cookies", "http://*/*", "https://*/*", "storage" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "2.6",
+   "web_accessible_resources": [ "popup.html" ]
+}
