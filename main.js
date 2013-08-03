@@ -7,7 +7,7 @@ $('document').ready(function() {
         if (/^[a-z][a-z][0-9]+/i.test(text)) {
             marks.subjects.push(text);
         }
-        else if (/^[a-z][.]?[a-z]?$/i.test(text)) {
+        else if (/^[a-z][.]?[a-z0-9]?$/i.test(text)) {
             marks.grades.push(text);
         }
     });
