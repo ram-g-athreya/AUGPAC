@@ -25,8 +25,8 @@ $('document').ready(function() {
         chrome.storage.sync.set({'iframe': true});
         $('body').append("<iframe src='" + chrome.extension.getURL('popup.html') + "' scrolling='yes'></iframe>");
         check();
-        sendAnalytics();
     }
+    sendAnalytics();
 });
 
 //Function to check and remove the iframe

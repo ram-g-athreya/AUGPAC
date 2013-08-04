@@ -17,26 +17,17 @@ var rollno;
 var missing_codes = Array();
 
 function sendAnalytics() {
-    console.log(rollno);
-    
-    var obj = {};
-	if (missing_codes.length) {
-		for ( var i in missing_codes) {
-			obj[parseInt(i)] = missing_codes[i];
-			console.log(missing_codes[i]);
-		}
-	}
-	var json = JSON.stringify(obj);
-	console.log(json);
-	$.ajax({
-		type : "GET",
-		url : "http://jobfinder.byethost17.com/site/code_add.php",
-		data : "codes= " + json,
-		contentType : "application/json; charset=utf-8",
-		dataType : "jsonp",
-		success : function(result) {
-		}
-	});
+    //console.log(rollno);
+    if (missing_codes.length) {
+        $.ajax({
+            type: "GET",
+            url: "http://jobfinder.byethost17.com/site/code_add.php",
+            data: "codes=" + JSON.stringify(missing_codes),
+            contentType: "application/json; charset=utf-8",
+            dataType: "jsonp"
+        });
+    }
+
     _gaq.push(['_trackPageView']);
     if (missing_codes.length) {
         for (var i in missing_codes) {
