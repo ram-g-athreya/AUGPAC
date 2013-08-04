@@ -2,7 +2,6 @@ $('document').ready(function() {
     //All marks are within the strong tag
     $('strong').each(function() {
         var text = $(this).text();
-        //console.log(text);
 
         //Pushing subject codes
         if (/^[a-z][a-z][0-9]+/i.test(text)) {
@@ -12,17 +11,21 @@ $('document').ready(function() {
         else if (/^[a-z][.]?[a-z0-9]?$/i.test(text)) {
             marks.grades.push(text);
         }
+        else if (text == parseInt(text)) {
+            rollno = text;
+        }
     });
 
     //console.log("subjects are " + marks.subjects);
     //console.log("grades are " + marks.grades);
-    
+
     marks.calculateGPA();
     if (!marks.invalid()) {
         marks.setValues();
         chrome.storage.sync.set({'iframe': true});
         $('body').append("<iframe src='" + chrome.extension.getURL('popup.html') + "' scrolling='yes'></iframe>");
         check();
+        sendAnalytics();
     }
 });
 

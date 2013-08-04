@@ -60,7 +60,7 @@ $('document').ready(function() {
                 cgpa = parseInt(gp) + parseInt(cgpa);
                 credit = parseInt(total_credits) + parseInt(credit);
                 var result = cgpa / credit;
-                $('#result').html('Your CGPA is ' + result);
+                $('#result').html('Your CGPA is ' + result.toFixed(3));
             }
         }
     });
