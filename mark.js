@@ -18,7 +18,7 @@ var marks = {
     {
         var i = 0;
         //Displaying Subject List
-        
+
         for (i in this.subjects)
         {
             var response = subject.find(this.subjects[i]);

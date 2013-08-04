@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Anna University GPA Calculator",
-    "version": "2.7",
+    "version": "2.8",
     "web_accessible_resources": ["popup.html"],
     "content_scripts": [{
             "all_frames": true,
