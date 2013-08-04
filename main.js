@@ -4,9 +4,11 @@ $('document').ready(function() {
         var text = $(this).text();
         //console.log(text);
 
+        //Pushing subject codes
         if (/^[a-z][a-z][0-9]+/i.test(text)) {
             marks.subjects.push(text);
         }
+        //Pushing grades
         else if (/^[a-z][.]?[a-z0-9]?$/i.test(text)) {
             marks.grades.push(text);
         }
