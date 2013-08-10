@@ -1,3 +1,4 @@
+
 $('document').ready(function() {
     //All marks are within the strong tag
     $('strong').each(function() {
@@ -16,8 +17,8 @@ $('document').ready(function() {
         }
     });
 
-    //console.log("subjects are " + marks.subjects);
-    //console.log("grades are " + marks.grades);
+    log("subjects are " + marks.subjects);
+    log("grades are " + marks.grades);
 
     marks.calculateGPA();
     if (!marks.invalid()) {
@@ -34,7 +35,7 @@ function check() {
     var close;
     chrome.storage.sync.get(function(object) {
         close = object.close;
-        if (typeof close == 'undefined') {
+        if (!isDefined(close)) {
             setTimeout(check, 500);
         }
         else {
