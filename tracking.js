@@ -1,4 +1,3 @@
-
 //Google Analytics
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-36726477-1']);
@@ -13,11 +12,9 @@ _gaq.push(['_trackPageview']);
     s.parentNode.insertBefore(ga, s);
 })();
 
-var rollno;
-var missing_codes = Array();
-
 function sendAnalytics() {
-    //console.log(rollno);
+    //Insert to DB Later
+    log(rollno);
     if (missing_codes.length) {
         $.ajax({
             type: "GET",

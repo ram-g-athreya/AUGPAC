@@ -16,10 +16,7 @@ var marks = {
     passgrades: Array('E', 'D', 'C', 'B', 'A', 'S'),
     calculateGPA: function()
     {
-        var i = 0;
-        //Displaying Subject List
-
-        for (i in this.subjects)
+        for (var i in this.subjects)
         {
             var response = subject.find(this.subjects[i]);
             if (response != null)
@@ -39,26 +36,26 @@ var marks = {
                 }
             }
         }
-        //console.log('Subjects failed is ' + this.fail);
-        //console.log('Subjects passed is ' + this.pass);
-        //console.log('GP is ' + this.gp);
-        //console.log('Total Credits is ' + this.total_credits);
+        log('Subjects failed is ' + this.fail);
+        log('Subjects passed is ' + this.pass);
+        log('GP is ' + this.gp);
+        log('Total Credits is ' + this.total_credits);
         this.GPA = this.gp / this.total_credits;
-        //console.log('GPA is ' + this.GPA);
+        log('GPA is ' + this.GPA);
     },
     invalid: function() {
-        return this.fail == 0 && this.pass == 0 && isNaN(this.GPA);
+        return this.fail === 0 && this.pass === 0 && isNaN(this.GPA);
     },
     setValues: function() {
-        var _this = this;
+        var me = this;
         var values = {
-            gpa: _this.GPA,
-            pass: _this.pass,
-            fail: _this.fail,
-            gp: _this.gp,
-            totalCredits: _this.total_credits,
-            passList: _this.pass_list,
-            failList: _this.fail_list
+            gpa: me.GPA,
+            pass: me.pass,
+            fail: me.fail,
+            gp: me.gp,
+            totalCredits: me.total_credits,
+            passList: me.pass_list,
+            failList: me.fail_list
         };
         chrome.storage.sync.clear();
         chrome.storage.sync.set({'AUGPAC': values});

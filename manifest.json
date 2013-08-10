@@ -9,7 +9,7 @@
     "content_scripts": [{
             "all_frames": true,
             "css": ["app.css"],
-            "js": ["tracking.js", "mark.js", "subject.js", "jquery.js", "main.js"],
+            "js": ["constants.js", "helpers.js", "tracking.js", "mark.js", "subject.js", "jquery.js", "main.js"],
             "matches": ["*://result12.annauniv.edu/*", "*://result13.annauniv.edu/*", "*://result14.annauniv.edu/*", "*://result.annauniv.edu/*", "*://annauniv.edu/*", "*://www.annauniv.edu/*"]
         }],
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
