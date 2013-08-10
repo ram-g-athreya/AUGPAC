@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cp -rf ../AUGPAC ../AUGPAC_RELEASE
-rm -rf ../AUGPAC_RELEASE/.git
-rm ../AUGPAC_RELEASE/release ../AUGPAC_RELEASE/README.md ../AUGPAC_RELEASE/schema.sql

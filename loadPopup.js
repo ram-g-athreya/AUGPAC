@@ -1,20 +1,20 @@
-
+var data;
 chrome.storage.sync.get(function(object) {
-    var iframe = object.iframe;
     data = object.AUGPAC;
-    log(iframe);
+    iframe = object.iframe;
+    //console.log(iframe);
     $('document').ready(function() {
-        if (!isDefined(iframe)) {
+        if (typeof iframe == 'undefined') {
             $('#close').addClass('hide');
         }
     });
-    log(data);
+    //console.log(data);
     setData();
 });
 
 function setData() {
     $('document').ready(function() {
-        var html;
+        var i = 0, html;
         $('div#gpa').html('Your GPA is ' + data.gpa);
         $('div#passnum').html('You passed in ' + data.pass + ' subjects');
         $('div#failnum').html('You failed in ' + data.fail + ' subjects');
@@ -32,8 +32,8 @@ function setData() {
 }
 
 function setLists(list, html) {
-    for (var i in list) {
-        html = html.concat('<span>' + list[i].subject + ' : ' + list[i].text + ' : ' + list[i].grade + '</span><br/>');
+    for (i in list) {
+        html = html.concat('<span>' + list[i].subject + ' - ' + list[i].text + ' - ' + list[i].grade + '</span><br/>');
     }
     return html;
 }
